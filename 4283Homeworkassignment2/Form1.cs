@@ -354,5 +354,7 @@ namespace _4283Homeworkassignment2
         {
             "SELECT * FROM table WHERE CLASS LIKE "
         }
+
+       
     }
 }

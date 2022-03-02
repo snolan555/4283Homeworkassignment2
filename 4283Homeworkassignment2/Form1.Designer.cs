@@ -31,19 +31,10 @@ namespace _4283Homeworkassignment2
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label statusLabel;
-            this.cbocharname = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lstquestname = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvcampaign = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtcharid = new System.Windows.Forms.TextBox();
-            this.txtclass = new System.Windows.Forms.TextBox();
-            this.txthp = new System.Windows.Forms.TextBox();
-            this.txtplayername = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.campaignBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.smnolanDataSet = new _4283Homeworkassignment2.smnolanDataSet();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,41 +67,25 @@ namespace _4283Homeworkassignment2
             this.txtnewchar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtnewquest = new System.Windows.Forms.TextBox();
-            this.smnolanDataSet = new _4283Homeworkassignment2.smnolanDataSet();
-            this.campaignBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.campaignTableAdapter = new _4283Homeworkassignment2.smnolanDataSetTableAdapters.CampaignTableAdapter();
-            this.campaignIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.characterIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.questIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acceptDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableAdapterManager = new _4283Homeworkassignment2.smnolanDataSetTableAdapters.TableAdapterManager();
             this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             statusLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcampaign)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.smnolanDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campaignBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smnolanDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbocharname
+            // statusLabel
             // 
-            this.cbocharname.FormattingEnabled = true;
-            this.cbocharname.Location = new System.Drawing.Point(80, 108);
-            this.cbocharname.Name = "cbocharname";
-            this.cbocharname.Size = new System.Drawing.Size(228, 28);
-            this.cbocharname.TabIndex = 0;
-            this.cbocharname.SelectedIndexChanged += new System.EventHandler(this.cbocharname_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 33);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Choose Your Character";
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new System.Drawing.Point(706, 32);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new System.Drawing.Size(60, 20);
+            statusLabel.TabIndex = 45;
+            statusLabel.Text = "Status:";
             // 
             // lstquestname
             // 
@@ -132,91 +107,15 @@ namespace _4283Homeworkassignment2
             this.label2.TabIndex = 3;
             this.label2.Text = "Select Your Quest";
             // 
-            // dgvcampaign
+            // campaignBindingSource
             // 
-            this.dgvcampaign.AutoGenerateColumns = false;
-            this.dgvcampaign.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcampaign.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.campaignIdDataGridViewTextBoxColumn,
-            this.characterIdDataGridViewTextBoxColumn,
-            this.questIdDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.acceptDateDataGridViewTextBoxColumn});
-            this.dgvcampaign.DataSource = this.campaignBindingSource;
-            this.dgvcampaign.Location = new System.Drawing.Point(463, 87);
-            this.dgvcampaign.Name = "dgvcampaign";
-            this.dgvcampaign.RowHeadersWidth = 62;
-            this.dgvcampaign.RowTemplate.Height = 28;
-            this.dgvcampaign.Size = new System.Drawing.Size(710, 149);
-            this.dgvcampaign.TabIndex = 4;
-            this.dgvcampaign.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcampaign_CellContentClick);
+            this.campaignBindingSource.DataMember = "Campaign";
+            this.campaignBindingSource.DataSource = this.smnolanDataSet;
             // 
-            // label3
+            // smnolanDataSet
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(466, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 33);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Campaigns";
-            // 
-            // txtcharid
-            // 
-            this.txtcharid.Location = new System.Drawing.Point(208, 157);
-            this.txtcharid.Name = "txtcharid";
-            this.txtcharid.Size = new System.Drawing.Size(100, 26);
-            this.txtcharid.TabIndex = 6;
-            // 
-            // txtclass
-            // 
-            this.txtclass.Location = new System.Drawing.Point(208, 189);
-            this.txtclass.Name = "txtclass";
-            this.txtclass.Size = new System.Drawing.Size(100, 26);
-            this.txtclass.TabIndex = 7;
-            this.txtclass.TextChanged += new System.EventHandler(this.txtclass_TextChanged);
-            // 
-            // txthp
-            // 
-            this.txthp.Location = new System.Drawing.Point(208, 228);
-            this.txthp.Name = "txthp";
-            this.txthp.Size = new System.Drawing.Size(100, 26);
-            this.txthp.TabIndex = 8;
-            // 
-            // txtplayername
-            // 
-            this.txtplayername.Location = new System.Drawing.Point(208, 269);
-            this.txtplayername.Name = "txtplayername";
-            this.txtplayername.Size = new System.Drawing.Size(100, 26);
-            this.txtplayername.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 162);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Character ID";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(76, 195);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Class";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(76, 232);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Hit Points";
+            this.smnolanDataSet.DataSetName = "smnolanDataSet";
+            this.smnolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
@@ -497,83 +396,15 @@ namespace _4283Homeworkassignment2
             this.txtnewquest.Size = new System.Drawing.Size(100, 26);
             this.txtnewquest.TabIndex = 44;
             // 
-            // smnolanDataSet
-            // 
-            this.smnolanDataSet.DataSetName = "smnolanDataSet";
-            this.smnolanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // campaignBindingSource
-            // 
-            this.campaignBindingSource.DataMember = "Campaign";
-            this.campaignBindingSource.DataSource = this.smnolanDataSet;
-            // 
             // campaignTableAdapter
             // 
             this.campaignTableAdapter.ClearBeforeFill = true;
-            // 
-            // campaignIdDataGridViewTextBoxColumn
-            // 
-            this.campaignIdDataGridViewTextBoxColumn.DataPropertyName = "Campaign_Id";
-            this.campaignIdDataGridViewTextBoxColumn.HeaderText = "Campaign_Id";
-            this.campaignIdDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.campaignIdDataGridViewTextBoxColumn.Name = "campaignIdDataGridViewTextBoxColumn";
-            this.campaignIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.campaignIdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // characterIdDataGridViewTextBoxColumn
-            // 
-            this.characterIdDataGridViewTextBoxColumn.DataPropertyName = "Character_Id";
-            this.characterIdDataGridViewTextBoxColumn.HeaderText = "Character_Id";
-            this.characterIdDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.characterIdDataGridViewTextBoxColumn.Name = "characterIdDataGridViewTextBoxColumn";
-            this.characterIdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // questIdDataGridViewTextBoxColumn
-            // 
-            this.questIdDataGridViewTextBoxColumn.DataPropertyName = "Quest_Id";
-            this.questIdDataGridViewTextBoxColumn.HeaderText = "Quest_Id";
-            this.questIdDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.questIdDataGridViewTextBoxColumn.Name = "questIdDataGridViewTextBoxColumn";
-            this.questIdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // acceptDateDataGridViewTextBoxColumn
-            // 
-            this.acceptDateDataGridViewTextBoxColumn.DataPropertyName = "Accept_Date";
-            this.acceptDateDataGridViewTextBoxColumn.HeaderText = "Accept_Date";
-            this.acceptDateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.acceptDateDataGridViewTextBoxColumn.Name = "acceptDateDataGridViewTextBoxColumn";
-            this.acceptDateDataGridViewTextBoxColumn.Width = 150;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CampaignTableAdapter = this.campaignTableAdapter;
             this.tableAdapterManager.UpdateOrder = _4283Homeworkassignment2.smnolanDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(706, 32);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(60, 20);
-            statusLabel.TabIndex = 45;
-            statusLabel.Text = "Status:";
             // 
             // statusTextBox
             // 
@@ -583,11 +414,32 @@ namespace _4283Homeworkassignment2
             this.statusTextBox.Size = new System.Drawing.Size(100, 26);
             this.statusTextBox.TabIndex = 46;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(596, 275);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(918, 275);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1844, 658);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(statusLabel);
             this.Controls.Add(this.statusTextBox);
             this.Controls.Add(this.label17);
@@ -622,45 +474,21 @@ namespace _4283Homeworkassignment2
             this.Controls.Add(this.txtqid);
             this.Controls.Add(this.txtdiff);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtplayername);
-            this.Controls.Add(this.txthp);
-            this.Controls.Add(this.txtclass);
-            this.Controls.Add(this.txtcharid);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dgvcampaign);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstquestname);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbocharname);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcampaign)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.smnolanDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campaignBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smnolanDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbocharname;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstquestname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvcampaign;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtcharid;
-        private System.Windows.Forms.TextBox txtclass;
-        private System.Windows.Forms.TextBox txthp;
-        private System.Windows.Forms.TextBox txtplayername;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -696,14 +524,11 @@ namespace _4283Homeworkassignment2
         private smnolanDataSet smnolanDataSet;
         private System.Windows.Forms.BindingSource campaignBindingSource;
         private smnolanDataSetTableAdapters.CampaignTableAdapter campaignTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn campaignIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn characterIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn questIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acceptDateDataGridViewTextBoxColumn;
         private smnolanDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox statusTextBox;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
